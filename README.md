@@ -19,7 +19,7 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 
 ## MVP
 
-![Captura de Pantalla 2020-07-30 a les 12.19.22](/https://github.com/Jorditm/EventMaster/blob/master/public/images/Captura%20de%20Pantalla%202020-07-30%20a%20les%2012.19.22.png)
+![Captura de Pantalla 2020-07-30 a les 12.19.22](https://github.com/Jorditm/EventMaster/blob/master/public/images/Captura%20de%20Pantalla%202020-07-30%20a%20les%2012.19.22.png)
 
 ## Server Routes (Back-end)
 
