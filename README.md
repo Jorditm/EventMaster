@@ -1,3 +1,5 @@
+
+
 # Event Master
 
 ## Description
@@ -6,16 +8,16 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 
 ## User Stories
 
-- **404** - As a user I want to see a nice 404 page when I go to a page that doesn’t exist so that I know it was my fault
-- **500** - As a user I want to see a nice error page when the super team screws it up so that I know that is not my fault
-- **homepage** - As a user I want to be able to access the homepage and filter by type of restaurant, log in and sign up.
-- **sign up** - As a user I want to sign up on the web page so that I can add favorite restaurants to my list.
-- **login** - As a user I want to be able to log in on the web page so that I can get back to my account
-- **logout** - As a user I want to be able to log out from the web page so that I can make sure no one will access my account
-- **favorite list** - As a user I want to see the list of my favorite and delete them.
-- **edit user** - As a user I want to be able to edit my profile.
-- **result** - As a user I want to see the list of restaurant filter by my preferences.
-- **restaurant listing** - As a user I want to see more details of the restaurant, be able to call them and visit their website and save it as favorites.
+- **error 400 ** - Como usuario, quiero ver una bonita página 404 cuando voy a una página que no existe para que sepa que fue mi culpa
+- **error 500** - Como usuario, quiero ver una buena página de error cuando el súper equipo la arruina para que sepa que no es mi culpa
+- **página de inicio** - Como usuario quiero poder acceder a la página de inicio tener una barra de búsqueda de eventos, un slider horizontal de eventos y una previsualización de 5 eventos
+- **registrarse** - Como usuario, quiero registrarme en la página web para poder agregar eventos favoritos a mi lista.
+- **iniciar sesión** - Como usuario quiero poder iniciar sesión en la página web para poder volver a mi cuenta.
+- **cerrar sesión** - Como usuario quiero poder cerrar sesión desde la página web para asegurarme de que nadie acceda a mi cuenta
+- **lista de favoritos** - Como usuario, quiero ver la lista de mis favoritos y eliminarlos.
+- **editar usuario** - Como usuario quiero poder editar mi perfil.
+- **resultado** - Como usuario, quiero ver la lista de eventos según mis búsquedas.
+- **listado de eventos** - Como usuario quiero ver más detalles del restaurante, poder ver los detalles, ir a la web para comprar entradas y guardarlo como favorito.
 
 ## MVP
 
@@ -38,7 +40,9 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 | `GET`      | `/events`                     | Renders event-list` view.                                    |                                                          |
 | `GET`      | `/events/details/:id`         |                                                              |                                                          |
 
+## API
 
+[API Link](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/)
 
 ## Models
 
@@ -53,15 +57,7 @@ User model
 }
 ```
 
-Favorites model
-
-```
-{
-  eventId: String,
-}
-```
-
-Events model
+FavoriteEvent model
 
 ```
 {
@@ -71,7 +67,8 @@ type: String,
 description: String,
 date: Date,
 location: String,
-url: String
+url: String,
+ema.Types.ObjectId, ref: 'User' },
 }
 ```
 
@@ -79,19 +76,11 @@ url: String
 
 ### Trello
 
-[Link to your trello board](https://trello.com/) or picture of your physical board
+[Link to your trello board](https://trello.com/b/zYVzZRBD/eventmaster) 
 
 ### Git
 
-The url to your repository and to your deployed project
-
-[Repository Link](http://github.com/)
-
-[Deploy Link](http://heroku.com/)
+[Repository Link](https://github.com/Jorditm/EventMaster)
 
 ### Slides
-
-The url to your presentation slides
-
-[Slides Link](http://slides.com/)
 
