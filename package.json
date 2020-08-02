@@ -19,6 +19,7 @@
     "mongoose": "^5.9.4",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.2",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "ticketmaster": "^2.0.4"
   }
 }
