@@ -1,5 +1,5 @@
 <div class="container">
-<h2> Log In </h2>
+<h2> Iniciar Sesión </h2>
 
 {{#if errorMessage}}
   <p class="error-message">
@@ -8,25 +8,24 @@
 {{/if}}
 
 <form class="login-signup" action="/login" method="post">
-  <div class="inputs">
   <div>
-    <input type="email" name="email" id="email-input"
-      placeholder="e.g., xena@warrior.company">
+    <input class="correo" type="email" name="email" id="email-input"
+      placeholder="CORREO">
   </div>
 
   <div>
-    <input type="password" name="password" id="password-input"
-      placeholder="e.g., ••••••••••••">
+    <input class="contraseña" type="password" name="password" id="password-input"
+      placeholder="CONTRASEÑA">
   </div>
-
-  <button class="primary"> Log In </button>
-  </div>
+ 
+  <button id="login" class="primary"> <h3>Entrar </h3></button>
+ 
 </form>
 
 <p>
-  Don't have an account?
+  Aún no tienes una cuenta?
   <a href="/signup">
-    Create an account.
+    Regístrate
   </a>
 </p>
 

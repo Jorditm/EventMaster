@@ -19,7 +19,7 @@ router.post("/signup", (req, res, next) => {
 
   if (emailInput === "" || passwordInput === "") {
     res.render("auth/signup", {
-      errorMessage: "Enter both email and password to sign up.",
+      errorMessage: "Ingrese el correo electrónico y la contraseña para iniciar sesión.",
     });
     return;
   }
@@ -32,7 +32,7 @@ router.post("/signup", (req, res, next) => {
 
     if (existingUser !== null) {
       res.render("auth/signup", {
-        errorMessage: `The email ${emailInput} is already in use.`,
+        errorMessage: `El correo ${emailInput} ya existe.`,
       });
       return;
     }
@@ -73,7 +73,7 @@ router.post("/login", (req, res, next) => {
 
   if (emailInput === "" || passwordInput === "") {
     res.render("auth/login", {
-      errorMessage: "Enter both email and password to log in.",
+      errorMessage: "Ingrese el correo electrónico y la contraseña para iniciar sesión.",
     });
     return;
   }
@@ -81,14 +81,14 @@ router.post("/login", (req, res, next) => {
   User.findOne({ email: emailInput }, (err, theUser) => {
     if (err || theUser === null) {
       res.render("auth/login", {
-        errorMessage: `There isn't an account with email ${emailInput}.`,
+        errorMessage: `No existe una cuenta con el siguiente correo: ${emailInput}.`,
       });
       return;
     }
 
     if (!bcrypt.compareSync(passwordInput, theUser.password)) {
       res.render("auth/login", {
-        errorMessage: "Invalid password.",
+        errorMessage: "Contraseña incorrecta",
       });
       return;
     }

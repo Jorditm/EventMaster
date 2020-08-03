@@ -1,6 +1,6 @@
 
 <div class="container">
-<h2> Sign Up </h2>
+<h2> Registrarte </h2>
 
 {{#if errorMessage}}
 <p class="error-message">
@@ -9,30 +9,30 @@
 {{/if}}
 
 <form class="login-signup" action="/signup" method="post">
-   <div class="inputs">
+   
     <div>
         
-        <input type="text" name="name" id="name-input" placeholder="e.g., Diana Prince">
+        <input class="nombre" type="text" name="name" id="name-input" placeholder="NOMBRE">
     </div>
 
     <div>
         
-        <input type="email" name="email" id="email-input" placeholder="e.g., diana@themyscira.agency">
+        <input class="correo" type="email" name="email" id="email-input" placeholder="CORREO">
     </div>
 
     <div>
         
-        <input type="password" name="password" id="password-input" placeholder="e.g., ••••••••••••">
+        <input class="contraseña" type="password" name="password" id="password-input" placeholder="CONTRASEÑA">
     </div>
 
-    <button class="primary"> Create New Account </button>
-</div>
+    <button class="primary"> <h3>Crear una nueva cuenta</h3> </button>
+
 </form>
 
 <p>
-    Already have an account?
+    Ya tienes una cuenta?
     <a href="/login">
-        Log in.
+        Iniciar sesión.
     </a>
 </p>
 </div>
