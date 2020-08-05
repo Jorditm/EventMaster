@@ -1,0 +1,36 @@
+<header>
+        <div class="nav-wrapper">
+            <nav>
+                <input class="hidden" type="checkbox" id="menuToggle">
+                <label class="menu-btn" for="menuToggle">
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                    <div class="menu"></div>
+                </label>
+                <div class="nav-container">
+                    <ul class="nav-tabs">
+                        {{#if isUserLoggedIn}}
+                        <li class="nav-tab"><a href="/">Inicio</a></li>
+                        <li class="nav-tab"><a href="/event/event">Eventos</a></li>
+                        <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
+                        <li class="nav-tab"><a href="/event/lugares">Lugares</a></li>
+                        <li class="nav-tab"><a href="/auth/logout">Cerrar Sesión</a></li>
+                        {{else}}
+                        <li class="nav-tab"><a href="/auth/signup">Registrarse</a></li>
+                        <li class="nav-tab"><a href="/auth/login">Iniciar Sesión</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+<div class="">
+    {{#each events}}
+    <img class="imagenEmergencia" src="{{this.images.0.url}}" alt="">
+    <h2> {{this.name}}</h2>
+    <a class="primary" href="{{this.url}}">Comprar entradas</a>
+    <h3> {{this.country.name}}, {{this.city.name}}</h3>
+    <h4> {{this.address.line1}}</h4>
+
+    {{/each}}
+</div>

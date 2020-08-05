@@ -17,6 +17,7 @@ const MongoStore = require('connect-mongo')(session);
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const eventRouter = require ('./routes/event');
+const favoritoRouter= require('./routes/favorito');
 
 
 mongoose
@@ -52,7 +53,7 @@ app.use(session({
   secret: 'never do your own EventMaster again',
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 },
+  cookie: { maxAge: 600000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
@@ -73,8 +74,9 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 app.use('/', indexRouter);
-app.use('/', authRouter);
-app.use('/', eventRouter);
+app.use('/auth', authRouter);
+app.use('/event', eventRouter);
+app.use('/favoritos', favoritoRouter);
 
 
 

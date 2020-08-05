@@ -18,9 +18,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 85px;
   }
-  
-  .correo,.contraseña,.nombre{
+  .logo{
+    width: 250px;
+    display:block;
+    margin:auto;
+  }
+
+  h5{
+    margin-top: 40px;
+    border: none;
+    font-size: 15px;
+    text-align: justify;
+    margin: 0px 10px 30px 10px;
+    
+  }
+
+  .buscar,.correo,.contraseña,.nombre{
       width: 240px;
       text-align: center;
       height: 35px;
@@ -44,16 +59,94 @@
       font-size: 30px;
   }
   p{
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 85px;
       margin-bottom: 100px;
   }
   
   h3{
       font-size: 18px;
-      padding: 2px 5px;
+      padding: 12px 15px;
   }
 
+  h4{
+    font-size: 15px;
+  }
+  img{
+    width:375px;
+  }
+  .etiqueta{
+    margin-bottom: 30px;
+    
+  }
+  .url{
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: 0px 90px;
+
+  }
+
+  .instagram{
+    background-image: url(/images/instagram.png);
+  }
+  .itunes{
+    background-image: url(/images/itunes.png);
+  }
+  .twitter{
+    background-image: url(/images/twitter.png);
+  }
+  .youtube{
+    background-image: url(/images/youtube.png);
+  }
+
+  .redes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .instagram,.itunes,.twitter,.youtube{
+    margin-top: 20px;
+    background-position: center; no-repeat; 
+    background-size: cover; 
+    height: 30px;
+    width: 30px;
+    
+  }
+
+  .serch{
+    margin-top: 20px;
+    background-position: center; no-repeat; 
+    background-size: cover; 
+    height: 230px;
+    display:flex;
+    justify-content: center;
+    align-items: center;  
+  }
+  #serch-event{
+    background-image: url(/images/defqon.jpg);
+  }
+  #serch-artist{
+    background-image: url(/images/BlackSabbath.jpg);
+    height: 260px;
+  }
+  #serch-lugar{
+    background-image: url(/images/Berghain.jpeg);
+  }
+
+  .texto{
+    background: linear-gradient(to bottom, rgb(255, 255, 255), #d8dbe6);
+    color: rgb(0, 0, 0);
+  }
+  .titulo,.ciudad-pais,.calle,.fecha{
+    margin: 0px 10px;
+  }
   .primary{
     background: linear-gradient(to bottom, rgba(1, 129, 248, 0.624), #001762);
     color: white;
