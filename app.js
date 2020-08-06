@@ -22,7 +22,7 @@ const favoritoRouter= require('./routes/favorito');
 
 
 mongoose
-  .connect('mongodb://localhost/EventMaster', {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -51,7 +51,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'never do your own EventMaster again',
+  secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
   cookie: { maxAge: 6000000 },
