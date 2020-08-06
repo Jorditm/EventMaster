@@ -26,6 +26,7 @@ router.post('/',(req,res,next)=>{
         url: req.body.url,
         images: req.body.images,
         localDate: req.body.localDate,
+        
     }
     const theFavorito = new Favorito (newFavorite)
     console.log(req.header('Referer'))

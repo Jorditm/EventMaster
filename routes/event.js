@@ -9,11 +9,6 @@ router.use((req,res,next)=>{
   else{next()}
 })
 
-
-router.get('/event',(req,res,next)=>{
-  res.render('event')
-  })
-
   router.get('/search-event', (req, res, next) => {
     const searchEvent = req.query.search
     axios.get(`https://app.ticketmaster.com/discovery/v2/events?&size=30&keyword=${searchEvent}&apikey=${process.env.CONSUMER_KEY}`)
@@ -23,11 +18,20 @@ router.get('/event',(req,res,next)=>{
      console.log(eventArray)
      res.render("event-search-result", {events: eventArray});
     })
-    .catch(error=>console.log(error))
-    
-    
+    .catch(error=>console.log(error)) 
   });
-    
+
+  router.get('/event', (req, res, next) => {
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events?&size=5&sort=random&apikey=${process.env.CONSUMER_KEY}`)
+    .then(response=>{
+       console.log(response)
+     const eventArray=response.data['_embedded'].events
+     console.log(eventArray)
+     res.render("event", {events: eventArray});
+    })
+    .catch(error=>console.log(error)) 
+  });
+
   router.get('/attractions',(req,res,next)=>{
   res.render('attractions')
   })
@@ -43,26 +47,7 @@ router.get('/event',(req,res,next)=>{
     })
     .catch(error=>console.log(error))
     
-    
   });
-
-  router.get('/lugares',(req,res,next)=>{
-    res.render('lugares')
-    })
-  
-    router.get('/search-lugares', (req, res, next) => {
-      const searchEvent = req.query.search
-      axios.get(`https://app.ticketmaster.com/discovery/v2/venues?&sort=random&size=50&keyword=${searchEvent}&apikey=${process.env.CONSUMER_KEY}`)
-      .then(response=>{
-         console.log(response)
-       const lugaresArray=response.data['_embedded'].venues
-       console.log(lugaresArray)
-       res.render("lugares-search-result", {events: lugaresArray});
-      })
-      .catch(error=>console.log(error))
-      
-      
-    });
 
 
 module.exports= router;

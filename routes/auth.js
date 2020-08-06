@@ -55,7 +55,7 @@ router.post("/signup", (req, res, next) => {
         });
         return;
       }
-
+      req.session.currentUser = theUser;
       res.redirect("/");
     });
   });

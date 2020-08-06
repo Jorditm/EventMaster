@@ -1,8 +1,13 @@
-.body {
+body {
     margin: 0px;
     width: 100%;
   }
-  
+main{
+  padding-top: 60px;
+}
+header{
+  background-color: rgba(255, 255, 255, 0.15);
+}
   .container{  
     font-family: 'M PLUS 1p', sans-serif;  
     display: flex;
@@ -32,10 +37,10 @@
     border-radius: 5px;
     text-align: center;
   }
-
+  
   .container-fav .btn:hover {
-    background-color:rgba(255, 0, 0, 0.767);
     z-index: 1;
+    opacity: 40%;
   }
 
   .logo{
@@ -95,7 +100,15 @@
   }
   .etiqueta{
     margin-bottom: 30px;
-    
+  }
+  .etiqueta-random{
+    margin-bottom: 20px;
+    margin-top: 30px;
+    widh
+  } 
+  .sugerencias{
+    text-align: center;
+    margin-top: 20px;
   }
   .url{
     display:flex;
@@ -177,7 +190,9 @@
     margin-top: 15px;
     margin-bottom: 25px;
   }
- 
+  .primary:hover{
+    opacity: 80%;
+  }
   #login{
       margin-top: 85px;
   }

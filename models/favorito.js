@@ -6,6 +6,7 @@ const favoritoSchema = new Schema({
     url: String,
     images: String,
     localDate: String,
+    
 });
 
 favoritoSchema.set('timestamps', true);
