@@ -11,7 +11,7 @@
                 <ul class="nav-tabs">
                     {{#if isUserLoggedIn}}
                     <li class="nav-tab"><a href="/">Inicio</a></li>
-                    <li class="nav-tab"><a href="/favoritos">Favoritos</a></li>
+                    <li id="subrallado-menú" class="nav-tab"><a href="/favoritos">Favoritos</a></li>
                     <li class="nav-tab"><a href="/event/event">Eventos</a></li>
                     <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
                     
@@ -26,11 +26,11 @@
     </div>
 </header>
 <main>
-<div class="resultados">
+<div class="resultados-fav">
     {{#each favoritos}}
-    <div class="etiqueta">
+    <div class="etiqueta-fav">
         <img src="{{this.images}}" alt="">
-        <div class="texto">
+        <div class="texto-favorito">
             <div class="titulo">
                 <h2> {{this.name}}</h2>
             </div>

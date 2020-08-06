@@ -22,7 +22,7 @@ router.use((req,res,next)=>{
   });
 
   router.get('/event', (req, res, next) => {
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events?&size=5&sort=random&apikey=${process.env.CONSUMER_KEY}`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events?&size=12&sort=random&apikey=${process.env.CONSUMER_KEY}`)
     .then(response=>{
        console.log(response)
      const eventArray=response.data['_embedded'].events
@@ -32,10 +32,6 @@ router.use((req,res,next)=>{
     .catch(error=>console.log(error)) 
   });
 
-  router.get('/attractions',(req,res,next)=>{
-  res.render('attractions')
-  })
-
   router.get('/search-attractions', (req, res, next) => {
     const searchEvent = req.query.search
     axios.get(`https://app.ticketmaster.com/discovery/v2/attractions?&size=30&keyword=${searchEvent}&apikey=${process.env.CONSUMER_KEY}`)
@@ -44,6 +40,18 @@ router.use((req,res,next)=>{
      const attractionArray=response.data['_embedded'].attractions
      console.log(attractionArray)
      res.render("attractions-search-result", {events: attractionArray});
+    })
+    .catch(error=>console.log(error))
+    
+  });
+
+  router.get('/attractions', (req, res, next) => {
+    axios.get(`https://app.ticketmaster.com/discovery/v2/attractions?&size=12&sort=random&apikey=${process.env.CONSUMER_KEY}`)
+    .then(response=>{
+       console.log(response)
+     const attractionArray=response.data['_embedded'].attractions
+     console.log(attractionArray)
+     res.render("attractions", {events: attractionArray});
     })
     .catch(error=>console.log(error))
     

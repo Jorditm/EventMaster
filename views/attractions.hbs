@@ -13,7 +13,7 @@
                         <li class="nav-tab"><a href="/">Inicio</a></li>
                         <li class="nav-tab"><a href="/favoritos">Favoritos</a></li>
                         <li class="nav-tab"><a href="/event/event">Eventos</a></li>
-                        <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
+                        <li id="subrallado-menú" class="nav-tab"><a href="/event/attractions">Artistas</a></li>
         
                         <li class="nav-tab"><a href="/auth/logout">Cerrar Sesión</a></li>
                         {{else}}
@@ -31,4 +31,26 @@
     <label for=""></label>
     <input class="buscar" type="text" placeholder="Busca un artista" name="search" id="" />
 </form>
+<h2 class="sugerencias">Algunos artistas</h2>
+<div class="resultados-random">
+    {{#each events}}
+    <div class="etiqueta-random">
+        <img src="{{this.images.6.url}}" alt="">
+        <div class="texto-artista">
+            <div class="titulo-artista">
+                <h2> {{this.name}}</h2>
+            </div>
+            <div class="redes">
+            <a class="youtube" href="{{this.externalLinks.youtube.0.url}}"></a>
+            <a class="twitter" href="{{this.externalLinks.twitter.0.url}}"></a>
+            <a class="itunes" href="{{this.externalLinks.itunes.0.url}}"></a>
+            <a class="instagram" href="{{this.externalLinks.instagram.0.url}}"></a>
+            </div>
+            <div class="url">
+                <a class="primary" href="{{this.url}}">Tickets</a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
 </main>
