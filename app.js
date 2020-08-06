@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 
 const session = require('express-session'); 
 const MongoStore = require('connect-mongo')(session); 
+var back = require('express-back');
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -53,12 +54,17 @@ app.use(session({
   secret: 'never do your own EventMaster again',
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 600000 },
+  cookie: { maxAge: 6000000 },
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
     ttl: 24 * 60 * 60 // 1 day
   })
 }));
+
+app.use(session({
+  secret: 'super secret'
+}));
+app.use(back());
 
 app.use((req, res, next) => {
   if (req.session.currentUser) {

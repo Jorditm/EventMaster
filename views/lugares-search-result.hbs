@@ -11,6 +11,7 @@
                     <ul class="nav-tabs">
                         {{#if isUserLoggedIn}}
                         <li class="nav-tab"><a href="/">Inicio</a></li>
+                        <li class="nav-tab"><a href="/favoritos">Favoritos</a></li>
                         <li class="nav-tab"><a href="/event/event">Eventos</a></li>
                         <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
                         <li class="nav-tab"><a href="/event/lugares">Lugares</a></li>
@@ -28,7 +29,7 @@
     {{#each events}}
     <img class="imagenEmergencia" src="{{this.images.0.url}}" alt="">
     <h2> {{this.name}}</h2>
-    <a class="primary" href="{{this.url}}">Comprar entradas</a>
+    <a class="primary" href="{{this.url}}">Tickets</a>
     <h3> {{this.country.name}}, {{this.city.name}}</h3>
     <h4> {{this.address.line1}}</h4>
 

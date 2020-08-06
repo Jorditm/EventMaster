@@ -1,4 +1,3 @@
-  
 <header>
     <div class="nav-wrapper">
         <nav>
@@ -12,6 +11,7 @@
                 <ul class="nav-tabs">
                     {{#if isUserLoggedIn}}
                     <li class="nav-tab"><a href="/">Inicio</a></li>
+                    <li class="nav-tab"><a href="/favoritos">Favoritos</a></li>
                     <li class="nav-tab"><a href="/event/event">Eventos</a></li>
                     <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
                     <li class="nav-tab"><a href="/event/lugares">Lugares</a></li>
@@ -26,3 +26,22 @@
     </div>
 </header>
 
+<div class="resultados">
+    {{#each favoritos}}
+    <div class="etiqueta">
+        <img src="{{this.images}}" alt="">
+        <div class="texto">
+            <div class="titulo">
+                <h2> {{this.name}}</h2>
+            </div>
+            <div class="fecha">
+                <h4>{{this.localDate}}</h4>
+            </div>
+            <div class="url">
+                <a class="primary" href="{{this.url}}">Tickets</a>
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+</div>

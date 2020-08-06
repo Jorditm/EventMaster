@@ -28,12 +28,12 @@ router.post('/',(req,res,next)=>{
         localDate: req.body.localDate,
     }
     const theFavorito = new Favorito (newFavorite)
-
+    console.log(req.header('Referer'))
     theFavorito.save()
         .then(favoritoCreado=>{
-          return User.findByIdAndUpdate(req.session.currentUser._id,{$push:{favoritos: favoritoCreado._id}},{new:true})
+        return User.findByIdAndUpdate(req.session.currentUser._id,{$push:{favoritos: favoritoCreado._id}},{new:true})
         })
-        .then(usuarioActualizado=> res.render('event-search-result',{message:"añadido a favoritos"}))
+        .then(usuarioActualizado=> res.redirect(req.header('Referer')))
         .catch(error=> console.log(error))
     
 })
