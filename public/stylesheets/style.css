@@ -20,6 +20,24 @@
     align-items: center;
     margin-top: 85px;
   }
+
+  .container-fav img{
+    width: 40px;
+  }
+
+  .container-fav .btn {
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .container-fav .btn:hover {
+    background-color:rgba(255, 0, 0, 0.767);
+    z-index: 1;
+  }
+
   .logo{
     width: 250px;
     display:block;

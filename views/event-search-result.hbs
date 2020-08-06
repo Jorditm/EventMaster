@@ -11,6 +11,7 @@
                 <ul class="nav-tabs">
                     {{#if isUserLoggedIn}}
                     <li class="nav-tab"><a href="/">Inicio</a></li>
+                    <li class="nav-tab"><a href="/favoritos">Favoritos</a></li>
                     <li class="nav-tab"><a href="/event/event">Eventos</a></li>
                     <li class="nav-tab"><a href="/event/attractions">Artistas</a></li>
                     <li class="nav-tab"><a href="/event/lugares">Lugares</a></li>
@@ -42,7 +43,7 @@
                 <h4>{{this.dates.start.localDate}}</h4>
             </div>   
         <div class="url">
-                <a class="primary" href="{{this.url}}">Comprar entrada</a>
+                <a class="primary" href="{{this.url}}">Tickets</a>
         </div>
         <form action="/favoritos" method="POST">
             <div style="display: none">
@@ -51,7 +52,10 @@
             <input type="text" name="images" id=""value="{{this.images.6.url}}">
             <input type="text" name="localDate" id=""value="{{this.dates.start.localDate}}">
             </div>
-            <button>Favorito</button>
+            
+            <div class="container-fav">
+            <button class="btn"><img src="/images/corazon desteñido.png"></button>
+            </div>
         </form>
         </div>
        

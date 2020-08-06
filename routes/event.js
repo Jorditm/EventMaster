@@ -16,7 +16,7 @@ router.get('/event',(req,res,next)=>{
 
   router.get('/search-event', (req, res, next) => {
     const searchEvent = req.query.search
-    axios.get(`https://app.ticketmaster.com/discovery/v2/events?&sort=random&size=30&keyword=${searchEvent}&apikey=${process.env.CONSUMER_KEY}`)
+    axios.get(`https://app.ticketmaster.com/discovery/v2/events?&size=30&keyword=${searchEvent}&apikey=${process.env.CONSUMER_KEY}`)
     .then(response=>{
        console.log(response)
      const eventArray=response.data['_embedded'].events
