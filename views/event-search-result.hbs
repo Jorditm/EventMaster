@@ -41,24 +41,29 @@
             </div>
             <div class="fecha">
                 <h4>{{this.dates.start.localDate}}</h4>
-            </div>   
-        <div class="url">
+            </div>
+            <div class="url">
                 <a class="primary" href="{{this.url}}">Tickets</a>
-        </div>
-        <form action="/favoritos" method="POST">
-            <div style="display: none">
-            <input type="text" name="name" id=""value="{{this.name}}">
-            <input type="text" name="url" id=""value="{{this.url}}">
-            <input type="text" name="images" id=""value="{{this.images.6.url}}">
-            <input type="text" name="localDate" id=""value="{{this.dates.start.localDate}}">
             </div>
-            
-            <div class="container-fav">
-            <button class="btn"><img src="/images/corazon desteñido.png"></button>
-            </div>
-        </form>
+            <form action="/favoritos" method="POST">
+                <div style="display: none">
+                    <input type="text" name="name" id="" value="{{this.name}}">
+                    <input type="text" name="url" id="" value="{{this.url}}">
+                    <input type="text" name="images" id="" value="{{this.images.6.url}}">
+                    <input type="text" name="localDate" id="" value="{{this.dates.start.localDate}}">
+                </div>
+                {{#if favoritoCreado == true}}
+                <div class="container-fav">
+                    <button class="btn"><img src="/images/corazon.png"></button>
+                </div>
+                {{else}}
+                <div class="container-fav">
+                    <button class="btn"><img src="/images/corazon desteñido.png"></button>
+                </div>
+                {{/if }}
+            </form>
         </div>
-       
+
     </div>
     {{/each}}
 </div>
