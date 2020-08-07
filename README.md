@@ -25,20 +25,21 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 
 ## Server Routes (Back-end)
 
-| **Method** | **Route**             | **Description**                                              | Request - Body           |
-| ---------- | --------------------- | ------------------------------------------------------------ | ------------------------ |
-| `GET`      | `/`                   | Índice                                                       |                          |
-| `GET`      | `/auth/login`         | Iniciar sesión                                               |                          |
-| `POST`     | /auth/login           | Envia información al servidor para verificar y entrar a la página de inicio | { email, password }      |
-| `GET`      | `/auth/signup`        | Regístro                                                     |                          |
-| `POST`     | `/auth/signup`        | Envia información al servidor para registrar datos, verificarlos y renderizarnos a la página de inicio | { email, password }      |
-|            |                       |                                                              |                          |
-|            |                       |                                                              |                          |
-| `GET`      | `/private/favoritos`  | Private route. Render the `favorites` view.                  |                          |
-| `POST`     | `/private/favorites/` | Private route. Adds a new favorite for the current user.     | { name, cuisine, city, } |
-|            |                       |                                                              |                          |
-| `GET`      | `/events`             | Renders event-list` view.                                    |                          |
-| `GET`      | `/events/details/:id` |                                                              |                          |
+| **Method** | **Route**                   | **Description**                                              | Request - Body      |
+| ---------- | --------------------------- | ------------------------------------------------------------ | ------------------- |
+| `GET`      | `/`                         | Índice                                                       |                     |
+| `GET`      | `/auth/login`               | Iniciar sesión                                               |                     |
+| `POST`     | `/auth/login`               | Envia información al servidor para verificar y entrar a la página de inicio | { email, password } |
+| `GET`      | `/auth/signup`              | Regístro                                                     |                     |
+| `POST`     | `/auth/signup`              | Envia información al servidor para registrar datos, verificarlos y renderizarnos a la página de inicio | { email, password } |
+| `GET`      | `/event/event`              | Trae información sobre eventos y tiene un buscador           |                     |
+| `POST`     | `/event/event`              | Busca la información del buscador y nos renderiza a resultados |                     |
+| `GET`      | `/favoritos`                | Ruta privada que renderiza a favoritos                       |                     |
+| `GET`      | `/event/attractions`        | Trae información sobre artistas y tiene un buscador          |                     |
+| `POST`     | `/event/attractions`        | Busca la información del buscador y nos renderiza a resultados |                     |
+| `GET`      | `/event/search-event`       | Página de resultados de la búsqueda de eventos               |                     |
+| `GET`      | `/event/search-attractions` | Página de resultados de la búsqueda de artistas              |                     |
+| `GET`      |                             | Cerrar sesión                                                |                     |
 
 ## API
 
@@ -46,29 +47,25 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 
 ## Models
 
-User model
+User
 
 ```
 {
+  favoritos:[{type: Schema.Types.ObjectId, ref: 'Favorito'}],
   name: String,
   email: String,
   password: String,
-  favorites: [FavoriteId],
 }
 ```
 
-FavoriteEvent model
+Favorito
 
 ```
 {
-name: String,
-image: String,
-type: String,
-description: String,
-date: Date,
-location: String,
-url: String,
-ema.Types.ObjectId, ref: 'User' },
+    name: String,
+    url: String,
+    images: String,
+    localDate: String,
 }
 ```
 
@@ -83,4 +80,10 @@ ema.Types.ObjectId, ref: 'User' },
 [Repository Link](https://github.com/Jorditm/EventMaster)
 
 ### Slides
+
+[Slides Link](https://docs.google.com/presentation/d/11Ub6-EmOCntwMMepgcJw71aIf-Iduj9wgLGRWNK6QRo/edit?usp=sharing )
+
+## Heroku
+
+[Web EventMaster](https://eventmasterr.herokuapp.com/)
 
