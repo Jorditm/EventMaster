@@ -21,7 +21,7 @@ Buscador de eventos a nivel global y guardar los eventos favoritos en una lista 
 
 ## MVP
 
-!![wireframe](/Users/sergibotargues/Desktop/proyecto 2/EventMaster/public/images/wireframe.png)
+!![wireframe](/public/images/wireframe.png)
 
 ## Server Routes (Back-end)
 
